@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" /> 
+  <link rel="stylesheet" href="css/style.css" type="text/css" /> 
+  <title>TwitRaffle</title>
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="page-header">
+        <h1>TwitRaffle</h1>
+      </div>
+      <form method="post">
+        Hashtag: <input type="text" class="disabled" readonly name="hashtag" value="agileopenlima">&nbsp;<input type="submit" class="btn primary" value="Sortear" />
+      </form>
+      <% if @winner %>
+        <p>Los siguientes usuarios entran al sorteo por twittear usando el hashtag #<%= params[:hashtag] %>:</p>      
+        <p><%= @users_list %></p>
+        <p>El ganador es... <%= @winner %></p>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>
