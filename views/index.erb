@@ -16,7 +16,11 @@
       </form>
       <% if @winner %>
         <strong>Los siguientes usuarios entran al sorteo por twittear usando el hashtag #<%= params[:hashtag] %>:</strong>      
-        <p><%= @users_list %></p>
+        <ul>
+        <% @users.each do |user|>
+          <li><%= user %></li>
+        <% end %>
+        </ul>
         <div class="alert-message success">
           <strong>El ganador es: <%= @winner %></strong>
         </div>
