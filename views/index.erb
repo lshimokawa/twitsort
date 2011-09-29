@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" /> 
   <link rel="stylesheet" href="css/style.css" type="text/css" /> 
+  <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
   <title>TwitRaffle</title>
 </head>
 <body>
@@ -11,17 +12,28 @@
       <div class="page-header">
         <h1>TwitRaffle</h1>
       </div>
-      <form action="/raffle">
-        Hashtag: <input type="text" class="disabled" readonly name="hashtag" value="agileopenlima">&nbsp;<input type="submit" class="btn primary" value="Sortear" />
-      </form>
-      <% if @winner %>
-        <div class="alert-message success">
-          <strong>El ganador es: <%= @winner %></strong>
+      <div class="row">
+        <div class="span10">
+          <form action="/raffle">
+            Hashtag: <input type="text" class="disabled" readonly name="hashtag" value="agileopenlima">&nbsp;
+            <input type="submit" class="btn primary" value="Sortear" />
+          </form>
+          <% if @winner %>
+          <div class="alert-message success">
+            <strong>El ganador es: <%= @winner %></strong>
+          </div>
+          <strong>Los siguientes usuarios entran al sorteo por twittear usando el hashtag #<%= params[:hashtag] %>:</strong>      
+          <%= @users.join ', ' %>
+          <% end %>
         </div>
-        <strong>Los siguientes usuarios entran al sorteo por twittear usando el hashtag #<%= params[:hashtag] %>:</strong>      
-        <%= @users.join ', ' %>
-      <% end %>
+        <div class="span4">
+          <div class="fb-like" data-href="http://twitraffle.heroku.com/" data-show-faces="false"></div>
+        </div>
+      </div>
     </div>
+    <footer>
+      <p>TwitRaffle on <a href="https://github.com/lshimokawa/twitraffle">GitHub</a></p>
+    </footer>
   </div>
 </body>
 </html>
