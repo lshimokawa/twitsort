@@ -15,9 +15,9 @@
         Hashtag: <input type="text" class="disabled" readonly name="hashtag" value="agileopenlima">&nbsp;<input type="submit" class="btn primary" value="Sortear" />
       </form>
       <% if @winner %>
-        <p>Los siguientes usuarios entran al sorteo por twittear usando el hashtag #<%= params[:hashtag] %>:</p>      
+        <strong>Los siguientes usuarios entran al sorteo por twittear usando el hashtag #<%= params[:hashtag] %>:</strong>      
         <p><%= @users_list %></p>
-        <p>El ganador es... <%= @winner %></p>
+        <strong>El ganador es: <%= @winner %></strong>
       <% end %>
     </div>
   </div>
