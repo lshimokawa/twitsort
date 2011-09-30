@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" /> 
   <link rel="stylesheet" href="/css/style.css" type="text/css" /> 
+  <link rel="shortcut icon" href="/images/favicon.ico">
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap-modal.js"></script>
   <script src="/js/script.js"></script>
@@ -31,7 +32,7 @@
         <form action="/search">
           <input type="text" id="hashtag" name="hashtag" value="Hashtag a buscar">&nbsp;
           <input type="submit" class="btn primary" value="Buscar" />&nbsp;
-          <div class="fb-like" data-href="http://twitraffle.heroku.com/" data-layout="button_count" data-show-faces="false"></div>          
+          <div class="fb-like" data-href="http://twitsort.heroku.com/" data-layout="button_count" data-show-faces="false"></div>          
         </form>
       </div>
       <div class="row">
@@ -41,7 +42,7 @@
           <ul>
             <% session[:users].each do |user| %>
               <li>
-                <%= twitter_link(user) %>
+                <%= twitter_user_link(user) %>
               </li>
             <% end %>
           </ul>
