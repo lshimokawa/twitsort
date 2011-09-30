@@ -6,8 +6,6 @@ body {
 .content {
 	background-color: #fff;
 	padding: 20px;
-}
-.content {
 	min-height: 300px;
 }
 
@@ -53,7 +51,7 @@ span#winner {
 	font: bold 60px Arial, Helvetica, Geneva, sans-serif;
 }
 
-#my-modal div.modal-header h2 {
+#winner-modal div.modal-header h2 {
 	color: #949494;
 }
 
