@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" /> 
+  <link rel="stylesheet" href="/css/style.css" type="text/css" /> 
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap-modal.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+  <title>TwitSort</title>
+</head>
+<body>
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="http://twitsort.heroku.com">TwitSort</a>
+        <div class="pull-right">
+          <ul class="nav">
+            <li><a href="http://github.com/lshimokawa/twitsort">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,68 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" /> 
-  <link rel="stylesheet" href="/css/style.css" type="text/css" /> 
-  <link rel="shortcut icon" href="/images/favicon.ico">
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap-modal.js"></script>
-  <script src="/js/script.js"></script>
-  <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-  <title>TwitSort</title>
-</head>
-<body>
-  <div class="topbar">
-    <div class="fill">
-      <div class="container">
-        <a class="brand" href="http://twitsort.heroku.com">TwitSort</a>
-        <div class="pull-right">
-          <ul class="nav">
-            <li><a href="http://github.com/lshimokawa/twitsort">GitHub</a></li>
-          </ul>
+<div class="hero-unit">
+  <h1>TwitSort</h1>
+  <p>Realiza un sorteo entre usuarios de twitter de manera sencilla. Solo ingresa un hashtag y TwitSort buscará los usuarios que han twitteado utilizando ese hashtag y eligirá un ganador al azar.</p>
+  <form action="/search">
+    <input type="text" id="hashtag" name="hashtag" value="Hashtag a buscar">&nbsp;
+    <input type="submit" class="btn primary" value="Buscar" />&nbsp;
+    <div class="fb-like" data-href="http://twitsort.heroku.com/" data-layout="button_count" data-show-faces="false"></div>          
+  </form>
+</div>
+<div class="row">
+  <div class="span12 offset2">
+    <% if session[:users] %>
+    <p class="message-results">Se han encontrado <strong><%= session[:users].count %></strong> usuarios que han twitteado usando el hashtag <%= hashtag_link(params[:hashtag]) %>:</p>
+    <ul>
+      <% session[:users].each do |user| %>
+        <li>
+          <%= twitter_user_link(user) %>
+        </li>
+      <% end %>
+    </ul>
+    <div class="options">
+      <a class="btn primary large" data-controls-modal="my-modal" data-backdrop="static" >Sortear!</a>
+    </div>
+    <div id="my-modal" class="modal hide fade">
+      <div class="modal-header">
+        <a href="#" class="close">&times;</a>
+        <h2>El ganador es</h2>
+      </div>
+      <div class="modal-body">
+        <p><span id="winner"></p>
         </div>
       </div>
+      <% end %>
     </div>
   </div>
-
-  <div class="container">
-    <div class="content">
-      <div class="hero-unit">
-        <h1>TwitSort</h1>
-        <p>Realiza un sorteo entre usuarios de twitter de manera sencilla. Solo ingresa un hashtag y TwitSort buscará los usuarios que han twitteado utilizando ese hashtag y eligirá un ganador al azar.</p>
-        <form action="/search">
-          <input type="text" id="hashtag" name="hashtag" value="Hashtag a buscar">&nbsp;
-          <input type="submit" class="btn primary" value="Buscar" />&nbsp;
-          <div class="fb-like" data-href="http://twitsort.heroku.com/" data-layout="button_count" data-show-faces="false"></div>          
-        </form>
-      </div>
-      <div class="row">
-        <div class="span12 offset2">
-          <% if session[:users] %>
-          <p class="message-results">Se han encontrado <strong><%= session[:users].count %></strong> usuarios que han twitteado usando el hashtag <%= hashtag_link(params[:hashtag]) %>:</p>
-          <ul>
-            <% session[:users].each do |user| %>
-              <li>
-                <%= twitter_user_link(user) %>
-              </li>
-            <% end %>
-          </ul>
-          <div class="options">
-            <a class="btn primary large" data-controls-modal="my-modal" data-backdrop="static" >Sortear!</a>
-          </div>
-          <div id="my-modal" class="modal hide fade">
-            <div class="modal-header">
-              <a href="#" class="close">&times;</a>
-              <h2>El ganador es</h2>
-            </div>
-            <div class="modal-body">
-              <p><span id="winner"></p>
-              </div>
-            </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-</html>
+</div>
