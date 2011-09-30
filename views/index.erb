@@ -39,7 +39,11 @@
         <div class="span12 offset2">
           <% if session[:users] %>
           <p>Se han encontrado <%= session[:users].count %> usuarios que han twitteado usando el hashtag <%= hashtag_link(params[:hashtag]) %>:</p>
-          <p><%= session[:users].join ', ' %></p>
+          <p>
+            <% for user in session[:users] %>
+              <%= twitter_user_link(user) %>
+            <% end %>
+          </p>
           <center><a class="btn primary large" data-controls-modal="my-modal" data-backdrop="static" >Sortear!</a></center>
 
           <div id="my-modal" class="modal hide fade">
