@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" /> 
-  <link rel="stylesheet" href="css/style.css" type="text/css" /> 
+  <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" /> 
+  <link rel="stylesheet" href="/css/style.css" type="text/css" /> 
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap-modal.js"></script>
+  <script src="/js/script.js"></script>
   <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
   <title>TwitRaffle</title>
 </head>
 <body>
-  <div class="container">
-    <div class="content">
-      <div class="page-header">
-        <h1>TwitRaffle</h1>
-      </div>
-      <div class="row">
-        <div class="span10">
-          <form action="/raffle">
-            Hashtag: <input type="text" class="disabled" readonly name="hashtag" value="agileopenlima">&nbsp;
-            <input type="submit" class="btn primary" value="Sortear" />
-          </form>
-          <% if @winner %>
-          <div class="alert-message success">
-            <strong>El ganador es: <%= @winner %></strong>
-          </div>
-          <strong>Los siguientes usuarios entran al sorteo por twittear usando el hashtag #<%= params[:hashtag] %>:</strong>      
-          <%= @users.join ', ' %>
-          <% end %>
-        </div>
-        <div class="span4">
-          <div class="fb-like" data-href="http://twitraffle.heroku.com/" data-show-faces="false"></div>
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="http://twitraffle.heroku.com">TwitRaffle</a>
+        <div class="pull-right">
+          <ul class="nav">
+            <li><a href="http://github.com/lshimokawa/twitraffle">GitHub</a></li>
+          </ul>
         </div>
       </div>
     </div>
-    <footer>
-      <p>TwitRaffle on <a href="https://github.com/lshimokawa/twitraffle">GitHub</a></p>
-    </footer>
+  </div>
+
+  <div class="container">
+    <div class="content">
+      <div class="hero-unit">
+        <h1>TwitRaffle</h1>
+        <p>Realiza un sorteo entre usuarios de twitter de manera sencilla. Solo ingresa un hashtag y TwitRaffle buscará los usuarios que han twitteado utilizando ese hashtag y eligirá un ganador al azar.</p>
+        <form action="/search">
+          <input type="text" id="hashtag" name="hashtag" value="Hashtag a buscar">&nbsp;
+          <input type="submit" class="btn primary" value="Buscar" />&nbsp;
+          <div class="fb-like" data-href="http://twitraffle.heroku.com/" data-layout="button_count" data-show-faces="false"></div>          
+        </form>
+      </div>
+      <div class="row">
+        <div class="span12 offset2">
+          <% if session[:users] %>
+          <p>Se han encontrado <%= session[:users].count %> usuarios que han twitteado usando el hashtag <%= hashtag_link(params[:hashtag]) %>:</p>
+          <p><%= session[:users].join ', ' %></p>
+          <center><a class="btn primary large" data-controls-modal="my-modal" data-backdrop="static" >Sortear!</a></center>
+
+          <div id="my-modal" class="modal hide fade">
+            <div class="modal-header">
+              <a href="#" class="close">&times;</a>
+              <h3>El ganador es</h3>
+            </div>
+            <div class="modal-body">
+              <p><span id="winner"></p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
