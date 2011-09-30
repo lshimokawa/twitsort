@@ -1,17 +1,13 @@
 $(document).ready(function() {
+  $("#div-results").hide();
 
-  $('#winner-modal').bind('show', function () {
+  $("#button-sortear").click(function() {
     $.ajax({
       url: "/raffle",
       success: function(data){
+        $("#div-results").show();
         $('#winner').html(data);
       }
-    });
-  })
-
-  $("#raffle").click(function() {
-    $('#winner-modal').modal({
-      closeOnEscape: true
     });
   });
 

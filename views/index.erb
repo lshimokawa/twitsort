@@ -10,8 +10,8 @@
 
 <% if session[:users] %>
 <div class="row">
-  <div class="span14 offset1">
-    <p class="message-results">Se han encontrado <strong><%= session[:users].count %></strong> usuarios que han twitteado usando el hashtag <%= hashtag_link(session[:hashtag]) %>:</p>
+  <div class="span8">
+    <p class="message-results"><strong><%= session[:users].count %></strong> usuarios han twitteado usando el hashtag <%= hashtag_link(session[:hashtag]) %>:</p>
     <ul>
       <% session[:users].each do |user| %>
       <li>
@@ -19,20 +19,17 @@
       </li>
       <% end %>
     </ul>
+  </div>
+  <div class="span7">
     <div class="options">
-      <a class="btn primary large" data-controls-modal="winner-modal" data-backdrop="static" >Sortear!</a>
+      <button id="button-sortear" class="btn primary">Sortear</a>
     </div>
-    <div id="winner-modal" class="modal hide fade">
-      <div class="modal-header">
-        <a href="#" class="close">&times;</a>
-        <h2>El ganador es</h2>
+    <p>
+      <div id="div-results" class="alert-message block-message success">
+        <h2>El ganador es:</h2>
+        <p><span id="winner" /></p>
       </div>
-      <div class="modal-body">
-        <img src="/images/prize.png" class="pull-right"width="66" height="100" />
-        <p><span id="winner"></p>
-        </div>
-      </div>
-    </div>
+    </p>
   </div>
 </div>
 <% end %>

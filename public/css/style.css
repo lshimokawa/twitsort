@@ -47,13 +47,5 @@ ul li {
 }
 
 span#winner {
-  font: bold 60px Arial, Helvetica, Geneva, sans-serif;
-}
-
-#winner-modal div.modal-header h2 {
-  color: #949494;
-}
-
-div.modal-header {
-  background-color: #ececec;
+  font: bold 40px Arial, Helvetica, Geneva, sans-serif;
 }
