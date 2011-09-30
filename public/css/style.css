@@ -1,3 +1,5 @@
+/* @override http://twitsort.dev/css/style.css */
+
 body {
 	padding-top: 40px;
 }
@@ -7,4 +9,54 @@ body {
 }
 .content {
 	min-height: 300px;
+}
+
+.hero-unit h1 {
+	margin-bottom: 5px;
+	margin-left: -10px;
+	font-size: 70px;
+}
+
+form {
+	margin-top: 25px;
+}
+
+ul {
+	margin-left: 0px;
+	overflow: auto;
+}
+
+p.message-results {
+	text-align: center;
+}
+
+div.options {
+	text-align: center;
+}
+
+ul li {
+	float: left;
+	list-style: none;
+	margin-right: 10px;
+	margin-bottom: 5px;
+}
+
+li a {
+	color: #909090;
+}
+
+li a:hover {
+	color: #535353;
+}
+
+span#winner {
+	font: bold 60px Arial, Helvetica, Geneva, sans-serif;
+}
+
+#my-modal div.modal-header h2 {
+	color: #949494;
+}
+
+div.modal-header {
+	background-color: #ececec;
 }
