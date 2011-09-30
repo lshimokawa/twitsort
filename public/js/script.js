@@ -1,9 +1,6 @@
 $(document).ready(function() {
-  $("#hashtag").focus(function() {
-    $(this).val('');
-  });
 
-  $('#my-modal').bind('show', function () {
+  $('#winner-modal').bind('show', function () {
     $.ajax({
       url: "/raffle",
       success: function(data){
@@ -13,7 +10,7 @@ $(document).ready(function() {
   })
 
   $("#raffle").click(function() {
-    $('#my-modal').modal({
+    $('#winner-modal').modal({
       closeOnEscape: true
     });
   });

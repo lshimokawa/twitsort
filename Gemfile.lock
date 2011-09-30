@@ -10,6 +10,7 @@ GEM
     faraday_middleware (0.7.0)
       faraday (~> 0.7.3)
     hashie (1.1.0)
+    json (1.6.1)
     monkey-lib (0.5.4)
       backports
     multi_json (1.0.3)
@@ -43,6 +44,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  json
   sinatra
   sinatra-reloader
   twitter
