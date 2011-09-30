@@ -1,19 +1,18 @@
 /* @override http://twitsort.dev/css/style.css */
 
-body {
-  padding-top: 40px;
-}
-
 .content {
   background-color: #fff;
   padding: 20px;
   min-height: 300px;
 }
 
+.hero-unit {
+  padding: 30px;
+}
+
 .hero-unit h1 {
   margin-bottom: 5px;
   margin-left: -10px;
-  font-size: 70px;
 }
 
 form {
@@ -23,6 +22,14 @@ form {
 ul {
   margin-left: 0px;
   overflow: auto;
+}
+
+li a {
+  color: #909090;
+}
+
+li a:hover {
+  color: #535353;
 }
 
 p.message-results {
@@ -37,14 +44,6 @@ ul li {
   float: left;
   list-style: none;
   margin-right: 10px;
-}
-
-li a {
-  color: #909090;
-}
-
-li a:hover {
-  color: #535353;
 }
 
 span#winner {
