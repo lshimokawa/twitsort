@@ -14,9 +14,9 @@
     <p class="message-results">Se han encontrado <strong><%= session[:users].count %></strong> usuarios que han twitteado usando el hashtag <%= hashtag_link(session[:hashtag]) %>:</p>
     <ul>
       <% session[:users].each do |user| %>
-        <li>
-          <%= twitter_user_link(user) %>
-        </li>
+      <li>
+        <%= twitter_user_link(user) %>
+      </li>
       <% end %>
     </ul>
     <div class="options">
@@ -28,6 +28,7 @@
         <h2>El ganador es</h2>
       </div>
       <div class="modal-body">
+        <img src="/images/prize.png" class="pull-right"width="66" height="100" />
         <p><span id="winner"></p>
         </div>
       </div>

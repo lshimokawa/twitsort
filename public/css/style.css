@@ -1,60 +1,60 @@
 /* @override http://twitsort.dev/css/style.css */
 
 body {
-	padding-top: 40px;
+  padding-top: 40px;
 }
 
 .content {
-	background-color: #fff;
-	padding: 20px;
-	min-height: 300px;
+  background-color: #fff;
+  padding: 20px;
+  min-height: 300px;
 }
 
 .hero-unit h1 {
-	margin-bottom: 5px;
-	margin-left: -10px;
-	font-size: 70px;
+  margin-bottom: 5px;
+  margin-left: -10px;
+  font-size: 70px;
 }
 
 form {
-	margin-top: 25px;
+  margin-top: 25px;
 }
 
 ul {
-	margin-left: 0px;
-	overflow: auto;
+  margin-left: 0px;
+  overflow: auto;
 }
 
 p.message-results {
-	text-align: center;
+  text-align: center;
 }
 
 div.options {
-	text-align: center;
+  text-align: center;
 }
 
 ul li {
-	float: left;
-	list-style: none;
-	margin-right: 10px;
+  float: left;
+  list-style: none;
+  margin-right: 10px;
 }
 
 li a {
-	color: #909090;
+  color: #909090;
 }
 
 li a:hover {
-	color: #535353;
+  color: #535353;
 }
 
 span#winner {
-	font: bold 60px Arial, Helvetica, Geneva, sans-serif;
+  font: bold 60px Arial, Helvetica, Geneva, sans-serif;
 }
 
 #winner-modal div.modal-header h2 {
-	color: #949494;
+  color: #949494;
 }
 
 div.modal-header {
-	background-color: #ececec;
+  background-color: #ececec;
 }
